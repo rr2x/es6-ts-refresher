@@ -1,0 +1,24 @@
+type annotation via Interface use, this allows type safety
+
+
+4 principles of OOP
+  - encapsulation: information hiding, commonly inside classes... in typescript using the "private" acess modifier keyword.
+
+  - abstraction: simplified interface and implementation of "loose coupling" so that code can be modified but will not affect the whole part,
+                 without revealing how everything works... usage of "interface" or "abstract" class
+
+                 interfaces = no actual working code
+
+  - inheritance: code reuse via implementation of a base type that serves as the core class
+                 javascript = prototypal inheritance
+                 typescript = can inherit from interfaces, abstract classes and classes... and also multiple inheritance using mixins
+
+  - polymorphism: derivation/inheritance from multiple base types
+                  creating an object that can be set to one of any number of possible types
+
+
+
+type = set of rules, can contain properties or functions.. if you reuse a type you are creating an instance of it.
+
+  - any: type can be changed easily, avoid.
+  - unknown: type that is recommended to be used over "any" type, however, it requires you to check type of it's variables first.

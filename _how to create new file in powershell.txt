@@ -1,0 +1,2 @@
+>>  ni "filename" ... f      // for file
+>>  ni "folder name" ... d   // for directory/folder
