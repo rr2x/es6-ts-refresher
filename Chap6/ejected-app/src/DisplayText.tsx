@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
+import UserTodos from './UserTodos';
 
-export const DisplayText = () => {
+interface DisplayTextProps {
+  getUserFullname: (username: string) => Promise<string>; // network call
+}
+
+export const DisplayText: FC<DisplayTextProps> = ({ getUserFullname }) => {
   const [txt, setTxt] = useState("");
   const [msg, setMsg] = useState("");
+  const [todoControl, setTodoControl] = useState<ReturnType<typeof UserTodos>>();
 
-  const onChangeTxt = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTxt(e.target.value);
-  }
+  const onChangeTxt = (e: React.ChangeEvent<HTMLInputElement>) => setTxt(e.target.value);
 
-  const onClickShowMsg = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const onClickShowMsg = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    setMsg(`Welcome to React testing, ${txt}`);
+    setMsg(`Welcome to React testing, ${await getUserFullname(txt)}`);
+    setTodoControl(<UserTodos username={txt} />);
   }
 
   return (
@@ -27,9 +32,7 @@ export const DisplayText = () => {
       <div>
         <label data-testid="final-msg">{msg}</label>
       </div>
-      <div>
-        this is just a test entry
-      </div>
+      {todoControl}
     </form>
   );
 }
