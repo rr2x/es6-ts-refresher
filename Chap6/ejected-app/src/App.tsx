@@ -9,6 +9,9 @@ function App() {
       const users = await usersResponse.json();
       console.log(...users);
       const userByName = users.find((usr: any) => usr.username.toLowerCase() === username);
+      if (userByName === undefined) {
+        return "<not found>";
+      }
       return userByName.name;
     }
     return "";
