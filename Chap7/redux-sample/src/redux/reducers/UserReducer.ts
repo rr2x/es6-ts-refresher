@@ -1,20 +1,31 @@
-export const USER_TYPE = "USER_TYPE";
+export enum UserActionEnum {
+  GET = "GET"
+}
 
-export interface User {
+interface User {
   id: string;
   username: string;
   email: string;
   city: string;
 }
 
-export interface UserAction {
-  type: string;
+interface UserAction {
+  type: UserActionEnum;
   payload: User | null;
 }
 
+export const createUserPayload = (usr: any): User => (
+  {
+    id: usr.id,
+    username: usr.username,
+    email: usr.email,
+    city: usr.address.city
+  }
+);
+
 export const UserReducer = (state: User | null = null, action: UserAction): User | null => {
   switch(action.type) {
-    case USER_TYPE:
+    case UserActionEnum.GET:
       console.log(`user reducer`, action.payload);
       return action.payload;
     default:
