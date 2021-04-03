@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import './App.css';
 import { UserActionEnum, createUserPayload } from '../redux/reducers/UserReducer';
 import { PostActionEnum, createPostPayload } from '../redux/reducers/PostReducer';
 import { UserDisplay } from '../comps/user/UserDisplay';
 import { PostDisplay } from '../comps/post/PostDisplay';
+// import ContextTester from '../comps/contextExample/ContextTester';
 
 function App() {
   const [userId, setUserId] = useState(0);
@@ -46,6 +46,7 @@ function App() {
 
   return (
     <React.Fragment>
+      {/* <ContextTester /> */}
       <div style={{width: "300px"}}>
         <div className = "App">
           <label>user id</label>
