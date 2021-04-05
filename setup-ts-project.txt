@@ -1,0 +1,3 @@
+>> npm init
+>> npm i ...   // import dependencies
+>> tsc -init   // creates typescript tsconfig
