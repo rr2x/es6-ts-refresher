@@ -1,3 +1,4 @@
 >> npm init
 >> npm i ...   // import dependencies
 >> tsc -init   // creates typescript tsconfig
+>> tsc         // compile ts to js then execute the js
