@@ -1,0 +1,6 @@
+>> npm init
+>> npm i typescript
+>> tsc -init
+~ edit tsconfig.json
+>> npm i express -S
+>> npm i "@types/express" jest "@types/jest" ts-jest nodemon ts-node-dev faker "@types/faker" -D

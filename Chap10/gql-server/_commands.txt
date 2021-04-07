@@ -1,0 +1,4 @@
+>> npm init
+>> npm i express graphql graphql-tools graphql-middleware apollo-server-express uuid -S
+>> npm i "@types/express" typescript "@types/faker" "@types/jest" faker jest nodemon ts-jest ts-node-dev "@types/uuid" -D
+>> tsc -init
